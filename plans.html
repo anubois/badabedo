@@ -35,8 +35,10 @@
     </section>
 
     <div class="container plans-list">
+      <!-- Tokyo Trip -->
       <article class="plan-card">
-        <img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938?_a=BAVAZGID0"
+        <img
+          src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938?_a=BAVAZGID0"
           alt="Tokyo city view">
         <div class="plan-info">
           <h2>ทริป 3 วัน ในโตเกียว</h2>
@@ -48,11 +50,12 @@
           </ul>
           <div class="plan-footer">
             <span>เหมาะกับ ฤดูใบไม้ผลิ / ฤดูใบไม้ร่วง</span>
-            <a class="btn-primary" href="#">ดูรายละเอียด</a>
+            <a class="btn-primary btn-popup" data-popup="popup-tokyo" href="#">ดูรายละเอียด</a>
           </div>
         </div>
       </article>
 
+      <!-- Hokkaido Trip -->
       <article class="plan-card">
         <img src="https://res.klook.com/image/upload/fl_lossy.progressive,q_60/Mobile/City/hrv7czrz9joofejyvo7a.jpg"
           alt="Hokkaido snow">
@@ -68,13 +71,15 @@
           </ul>
           <div class="plan-footer">
             <span>เหมาะกับ ธ.ค.–มี.ค.</span>
-            <a class="btn-primary" href="#">ดูรายละเอียด</a>
+            <a class="btn-primary btn-popup" data-popup="popup-hokkaido" href="#">ดูรายละเอียด</a>
           </div>
         </div>
       </article>
 
+      <!-- Kyoto Trip -->
       <article class="plan-card">
-        <img src="https://lp-cms-production.imgix.net/image_browser/shutterstockRF_168163925.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop"
+        <img
+          src="https://lp-cms-production.imgix.net/image_browser/shutterstockRF_168163925.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop"
           alt="Kyoto temple">
         <div class="plan-info">
           <h2>ทริป 4 วัน เกียวโต – นารา</h2>
@@ -87,40 +92,187 @@
           </ul>
           <div class="plan-footer">
             <span>เหมาะกับ ทุกฤดูกาล</span>
-            <a class="btn-primary" href="#">ดูรายละเอียด</a>
+            <a class="btn-primary btn-popup" data-popup="popup-kyoto" href="#">ดูรายละเอียด</a>
           </div>
         </div>
       </article>
     </div>
   </main>
-  <script>
-    // ตรวจสอบว่ากดลิงก์กลับไป index.html#... แล้ว scroll ได้แน่ ๆ
-    document.querySelectorAll('a[href^="index.html#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const url = link.getAttribute('href');
-        const [file, id] = url.split('#');
-        // ไปหน้า index.html พร้อมส่ง hash
-        window.location.href = file + '?goto=' + id;
-      });
-    });
-  </script>
 
-
-
-
-
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Japan Explorer — แผนเที่ยวญี่ปุ่น</p>
     </div>
-
-
-
-
   </footer>
+
+  <!-- ========================= POPUPS ========================= -->
+  <div id="popup-tokyo" class="popup-overlay-custom">
+    <div class="popup-content-custom">
+      <span class="close-btn-custom">&times;</span>
+      <header class="popup-header">
+        <h2>🗼 ทริป 3 วัน ในโตเกียว (Full Plan)</h2>
+        <p style="color:#666;">สัมผัสวัฒนธรรมดั้งเดิมและแฟชั่นล้ำสมัย</p>
+      </header>
+      <section class="itinerary-grid-custom">
+        <div class="day-card-custom">
+          <h4>Day 1: Asakusa & Skytree</h4>
+          <ul>
+            <li>เช้า: วัดเซนโซจิ (Senso-ji) ถ่ายรูปโคมแดง</li>
+            <li>บ่าย: ถนนนากามิเสะ กินซาลาเปาทอด</li>
+            <li>เย็น: ขึ้นตึก Tokyo Skytree ชมวิวเมือง</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 2: Shibuya & Harajuku</h4>
+          <ul>
+            <li>เช้า: ศาลเจ้าเมจิ (Meiji Jingu)</li>
+            <li>บ่าย: เดิน Takeshita Street ดูแฟชั่น</li>
+            <li>เย็น: ห้าแยกชิบูย่า & ถ่ายรูป Hachiko</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 3: Ueno & Museums</h4>
+          <ul>
+            <li>เช้า: สวน Ueno Park ชมซากุระ(ถ้ามี)</li>
+            <li>บ่าย: พิพิธภัณฑ์แห่งชาติโตเกียว</li>
+            <li>เย็น: ช้อปของฝากถูกที่ตลาด Ameyoko</li>
+          </ul>
+        </div>
+      </section>
+      <footer class="popup-footer-custom">
+        <button class="btn-primary">จองทริปนี้ (Tokyo)</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="popup-hokkaido" class="popup-overlay-custom">
+    <div class="popup-content-custom">
+      <span class="close-btn-custom">&times;</span>
+      <header class="popup-header">
+        <h2>❄️ ทริป 5 วัน ฮอกไกโด (Winter)</h2>
+        <p style="color:#666;">หิมะขาวโพลน คลองโอทารุ และปูยักษ์</p>
+      </header>
+      <section class="itinerary-grid-custom">
+        <div class="day-card-custom">
+          <h4>Day 1: Sapporo City</h4>
+          <ul>
+            <li>เช้า: ตลาดปลานิโจ (Nijo Market)</li>
+            <li>บ่าย: ถ่ายรูป Sapporo Clock Tower</li>
+            <li>เย็น: บุฟเฟต์ปูยักษ์ & เบียร์ซัปโปโร</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 2: Otaru Romantic</h4>
+          <ul>
+            <li>เช้า: นั่งรถไฟไปโอทารุ</li>
+            <li>บ่าย: เดินคลองโอทารุ & พิพิธภัณฑ์กล่องดนตรี</li>
+            <li>เย็น: ทานขนมหวานร้าน LeTao</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 3-5: Niseko & Toya</h4>
+          <ul>
+            <li>Day 3: เล่นสกีที่ Niseko Resort</li>
+            <li>Day 4: ชมทะเลสาบ Toya แช่ออนเซ็น</li>
+            <li>Day 5: ช้อปปิ้ง Tanukikoji & กลับสนามบิน</li>
+          </ul>
+        </div>
+      </section>
+      <footer class="popup-footer-custom">
+        <button class="btn-primary">จองทริปนี้ (Hokkaido)</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="popup-kyoto" class="popup-overlay-custom">
+    <div class="popup-content-custom">
+      <span class="close-btn-custom">&times;</span>
+      <header class="popup-header">
+        <h2>⛩️ ทริป 4 วัน เกียวโต-นารา</h2>
+        <p style="color:#666;">ย้อนเวลาสู่อดีต เมืองหลวงเก่า</p>
+      </header>
+      <section class="itinerary-grid-custom">
+        <div class="day-card-custom">
+          <h4>Day 1: Higashiyama</h4>
+          <ul>
+            <li>เช้า: วัดน้ำใส (Kiyomizu-dera)</li>
+            <li>บ่าย: เดินย่านเมืองเก่า Ninenzaka</li>
+            <li>เย็น: ตามหาเกอิชาที่ย่าน Gion</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 2: Fushimi & Arashiyama</h4>
+          <ul>
+            <li>เช้า: เสาโทริอิหมื่นต้น Fushimi Inari</li>
+            <li>บ่าย: ป่าไผ่อาราชิยามะ & รถไฟสายโรแมนติก</li>
+            <li>เย็น: ชมสะพาน Togetsukyo</li>
+          </ul>
+        </div>
+        <div class="day-card-custom">
+          <h4>Day 3-4: Nara & Shopping</h4>
+          <ul>
+            <li>Day 3: ให้อาหารกวางที่นารา & วัดโทไดจิ</li>
+            <li>Day 4: เก็บตกวัดทอง (Kinkakuji)</li>
+            <li>บ่าย: ช้อปปิ้งหน้าสถานีเกียวโต</li>
+          </ul>
+        </div>
+      </section>
+      <footer class="popup-footer-custom">
+        <button class="btn-primary">จองทริปนี้ (Kyoto)</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ========================= JS ========================= -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // เปิด popup
+      const popupButtons = document.querySelectorAll('.btn-popup');
+      popupButtons.forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          const popupId = btn.getAttribute('data-popup');
+          const popup = document.getElementById(popupId);
+          if (popup) {
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      // ปิด popup
+      const closeButtons = document.querySelectorAll('.close-btn-custom');
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const activePopups = document.querySelectorAll('.popup-overlay-custom.active');
+          activePopups.forEach(p => p.classList.remove('active'));
+          document.body.style.overflow = 'auto';
+        });
+      });
+
+      // คลิกพื้นที่ว่างปิด popup
+      const overlays = document.querySelectorAll('.popup-overlay-custom');
+      overlays.forEach(overlay => {
+        overlay.addEventListener('click', e => {
+          if (e.target === overlay) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+        });
+      });
+
+      // กด ESC ปิด popup
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          const activePopups = document.querySelectorAll('.popup-overlay-custom.active');
+          activePopups.forEach(p => p.classList.remove('active'));
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
   </script>
 
 </body>
